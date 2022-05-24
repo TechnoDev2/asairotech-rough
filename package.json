@@ -1,0 +1,24 @@
+{
+  "name": "asairotech",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx tailwindcss -i ./src/style.css -o ./dist/css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechnoDev2/asairotech.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechnoDev2/asairotech/issues"
+  },
+  "homepage": "https://github.com/TechnoDev2/asairotech#readme",
+  "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.0",
+    "tailwindcss": "^3.0.24"
+  }
+}
