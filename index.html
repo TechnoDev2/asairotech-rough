@@ -9,54 +9,105 @@
 <body class="bg-gray-100 h-screen">
 
     <!-- Navbar & Hero section -->
-    
-    <header class="bg-white dark:bg-gray-800">
-        <nav class="bg-gradient-to-t from-gray-800 to-gray-700 sticky">
-            <div class="container px-6 py-3 mx-auto lg:flex lg:justify-between lg:items-center">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">AS Airotech</a>
-                    </div>
-                    
-                    <!-- Mobile menu button -->
-                    <div class="flex lg:hidden">
-                        <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
-                            <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
-                                <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
-                            </svg>
+
+    <div class="relative bg-blue-200 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+          <div class="relative bg-blue-200 z-10 pb-8 sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+            <div class="hidden lg:block absolute right-2 inset-y-0 h-[1500px] w-28 bg-blue-200 transform -translate-y-12 rotate-6 ">
+            </div>
+            <div>
+              <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
+                <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start" aria-label="Global">
+                  <div class="flex items-center flex-grow flex-shrink-0 lg:flex-grow-0">
+                    <div class="flex items-center justify-between w-full md:w-auto">
+                      <a href="#">
+                        <span class="sr-only">Workflow</span>
+                        <a class="text-2xl font-bold text-gray-800 lg:text-3xl hover:text-gray-700" href="#">AS Airotech</a>
+                      </a>
+                      <div class="-mr-2 flex items-center md:hidden">
+                        <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500" aria-expanded="false">
+                          <span class="sr-only">Open main menu</span>
+                          <!-- Heroicon name: outline/menu -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                          </svg>
                         </button>
+                      </div>
                     </div>
-                </div>
-
-                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
-                <div class="hidden items-center lg:flex">
-                    <div class="flex flex-col lg:flex-row lg:mx-6">
-                        <a href="index.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">Home</a>
-                        <a href="about.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">About</a>
-                        <a href="products.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">Products</a>
-                        <a href="services.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">Services</a>
-                        <a href="contact.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">Contact</a>
+                  </div>
+                  <div class="hidden md:block md:ml-10 md:pr-4 md:space-x-8">
+                      <div class="flex">
+                          <a href="index.html" class="my-1 text-sm font-medium text-gray-700  hover:text-blue-500 lg:mx-4 lg:my-0">HOME</a>
+                          <a href="about.html" class="my-1 text-sm font-medium text-gray-700  hover:text-blue-500 lg:mx-4 lg:my-0">ABOUT</a>
+                          <a href="products.html" class="my-1 text-sm font-medium text-gray-700  hover:text-blue-500 lg:mx-4 lg:my-0">PRODUCTS</a>
+                          <a href="services.html" class="my-1 text-sm font-medium text-gray-700  hover:text-blue-500 lg:mx-4 lg:my-0">SERVICES</a>
+                          <a href="contact.html" class="my-1 text-sm font-medium text-gray-700  hover:text-blue-500 lg:mx-4 lg:my-0">CONTACT</a>
+                      </div>
+                  </div>
+                </nav>
+              </div>
+          
+              <!--
+                Mobile menu, show/hide based on menu open state.
+            
+                Entering: "duration-150 ease-out"
+                  From: "opacity-0 scale-95"
+                  To: "opacity-100 scale-100"
+                Leaving: "duration-100 ease-in"
+                  From: "opacity-100 scale-100"
+                  To: "opacity-0 scale-95"
+              -->
+              <div class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden">
+                <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
+                  <div class="px-5 pt-4 flex items-center justify-between">
+                    <div>
+                      <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="">
                     </div>
+                    <div class="-mr-2">
+                      <button type="button" class="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                        <span class="sr-only">Close main menu</span>
+                        <!-- Heroicon name: outline/x -->
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex px-2 pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 lg:mx-4 lg:my-0">HOME</a>
+                    <a href="about.html" class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 lg:mx-4 lg:my-0">ABOUT</a>
+                    <a href="products.html" class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 lg:mx-4 lg:my-0">PRODUCTS</a>
+                    <a href="services.html" class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 lg:mx-4 lg:my-0">SERVICES</a>
+                    <a href="contact.html" class="my-1 text-sm font-medium text-gray-700 hover:text-blue-500 lg:mx-4 lg:my-0">CONTACT</a>
+                  </div>
                 </div>
+              </div>
             </div>
-        </nav>
-
-        <div class="container px-6 py-16 mx-auto">
-            <div class="items-center lg:flex">
-                <div class="w-full lg:w-1/2">
-                    <div class="lg:max-w-lg">
-                        <h1 class="text-2xl font-semibold text-gray-800 uppercase dark:text-white lg:text-3xl">Best Place To Choose Your Clothes</h1>
-                        <p class="mt-2 text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</p>
-                        <button class="w-full px-3 py-2 mt-6 text-xs font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Shop Now</button>
-                    </div>
-                </div>
         
-                <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
-                    <img class="w-full h-full" src="/images/Catalogue-pana.svg" alt="Catalogue-pana.svg">
+            <main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+              <div class="sm:text-center lg:text-left">
+                <h1 class="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
+                  <span class="block xl:inline">Data to enrich your</span>
+                  <span class="block text-blue-600 xl:inline">online business</span>
+                </h1>
+                <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0 lg:pr-8">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>
+                <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                  <div class="rounded-md shadow">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 md:py-4 md:text-lg md:px-10"> Get started </a>
+                  </div>
+                  <div class="mt-3 sm:mt-0 sm:ml-3">
+                    <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-blue-700 bg-blue-100 hover:bg-blue-200 md:py-4 md:text-lg md:px-10"> Live demo </a>
+                  </div>
                 </div>
-            </div>
+              </div>
+            </main>
+          </div>
         </div>
-    </header>
+        <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+          <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80" alt="">
+        </div>
+      </div>
+  
 
     <!-- Stats -->
 
@@ -69,7 +120,7 @@
           <div class="flex flex-wrap -m-4 text-center">
             <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
                   <path d="M8 17l4 4 4-4m-4-5v9"></path>
                   <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
                 </svg>
@@ -79,7 +130,7 @@
             </div>
             <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
                   <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
                   <circle cx="9" cy="7" r="4"></circle>
                   <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
@@ -90,7 +141,7 @@
             </div>
             <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
                   <path d="M3 18v-6a9 9 0 0118 0v6"></path>
                   <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
                 </svg>
@@ -100,7 +151,7 @@
             </div>
             <div class="p-4 md:w-1/4 sm:w-1/2 w-full">
               <div class="border-2 border-gray-200 px-4 py-6 rounded-lg">
-                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-indigo-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="text-blue-500 w-12 h-12 mb-3 inline-block" viewBox="0 0 24 24">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
                 <h2 class="title-font font-medium text-3xl text-gray-900">46</h2>
@@ -113,9 +164,9 @@
 
       <!-- Market Reach -->
       
-      <section class="bg-white dark:bg-gray-900">
+      <section class="bg-blue-200 bg-gradient-to-br from-white">
         <div class="container px-6 py-10 mx-auto">
-            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl dark:text-white">explore our <br> awesome Components</h1>
+            <h1 class="text-3xl font-semibold text-gray-800 capitalize lg:text-4xl">explore our <br> awesome Components</h1>
             
             <div class="mt-2">
                 <span class="inline-block w-40 h-1 rounded-full bg-blue-500"></span>
@@ -126,58 +177,58 @@
             <div class="mt-8 xl:mt-12 lg:flex lg:items-center">
                 <div class="w-full lg:w-1/2 grid grid-cols-1 gap-8 xl:gap-16 md:grid-cols-2">
                     <div class="space-y-3">
-                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                             </svg>
                         </span>
 
-                        <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">New Components</h1>
+                        <h1 class="text-2xl font-semibold text-gray-700 capitalize">New Components</h1>
 
-                        <p class="text-gray-500 dark:text-gray-300">
+                        <p class="text-gray-500">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
                         </p>
                     </div>
 
                     <div class="space-y-3">
-                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
                             </svg>
                         </span>
 
-                        <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">elegant Dark Mode</h1>
+                        <h1 class="text-2xl font-semibold text-gray-700 capitalize">elegant Dark Mode</h1>
 
-                        <p class="text-gray-500 dark:text-gray-300">
+                        <p class="text-gray-500">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
                         </p>
                     </div>
 
                     <div class="space-y-3">
-                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
                             </svg>
                         </span>
 
-                        <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Easy to customiztions</h1>
+                        <h1 class="text-2xl font-semibold text-gray-700 capitalize">Easy to customiztions</h1>
 
-                        <p class="text-gray-500 dark:text-gray-300">
+                        <p class="text-gray-500">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
                         </p>
                     </div>
 
                     <div class="space-y-3">
-                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl dark:text-white dark:bg-blue-500">
+                        <span class="inline-block p-3 text-blue-500 bg-blue-100 rounded-xl">
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                             </svg>
                         </span>
 
-                        <h1 class="text-2xl font-semibold text-gray-700 capitalize dark:text-white">Simple & clean designs</h1>
+                        <h1 class="text-2xl font-semibold text-gray-700 capitalize">Simple & clean designs</h1>
 
-                        <p class="text-gray-500 dark:text-gray-300">
+                        <p class="text-gray-500">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ab nulla quod dignissimos vel non corrupti doloribus voluptatum eveniet
                         </p>
                     </div>
@@ -207,8 +258,8 @@
       
           <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
               <!--Product 1 -->
-            <div class="group relative hover:bg-blue-500 hover:text-white rounded-md">
-              <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div class="group relative hover:bg-blue-500 hover:text-white">
+              <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                 <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
               </div>
               <div class="mt-4 flex justify-between p-4">
@@ -225,8 +276,8 @@
               </div>
             </div>
             <!--Product 2 -->
-            <div class="group relative hover:bg-blue-500 hover:text-white rounded-md">
-                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div class="group relative hover:bg-blue-500 hover:text-white">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
                 <div class="mt-4 flex justify-between p-4">
@@ -243,8 +294,8 @@
                 </div>
             </div>
             <!--Product 3 -->
-            <div class="group relative hover:bg-blue-500 hover:text-white rounded-md">
-                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div class="group relative hover:bg-blue-500 hover:text-white">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
                 <div class="mt-4 flex justify-between p-4">
@@ -261,8 +312,8 @@
                 </div>
             </div>
             <!--Product 4 -->
-            <div class="group relative hover:bg-blue-500 hover:text-white rounded-md">
-                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 rounded-md overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
+            <div class="group relative hover:bg-blue-500 hover:text-white">
+                <div class="w-full min-h-80 bg-gray-200 aspect-w-1 aspect-h-1 overflow-hidden group-hover:opacity-75 lg:h-80 lg:aspect-none">
                   <img src="https://tailwindui.com/img/ecommerce-images/product-page-01-related-product-01.jpg" alt="Front of men&#039;s Basic Tee in black." class="w-full h-full object-center object-cover lg:w-full lg:h-full">
                 </div>
                 <div class="mt-4 flex justify-between p-4">
@@ -282,6 +333,96 @@
           </div>
         </div>
       </div>
+
+      <!-- FAQ Banner -->
+      <div class="text-gray-600 body-font -translate-y-8">
+        <div class="container px-2 py-4 mx-auto flex items-center md:flex-row flex-col bg-blue-500 bg-gradient-to-br from-blue-300">
+          <div class="flex flex-col md:pr-10 md:mb-0 mb-6 pr-0 w-full md:w-auto md:text-left text-center">
+            <h2 class="text-xs text-white tracking-widest font-medium title-font mb-1">FOR ANY DOUBTS!</h2>
+            <h1 class="md:text-3xl text-2xl font-medium title-font text-gray-100">Please visit our FAQs section</h1>
+          </div>
+          <div class="flex md:ml-auto md:mr-0 mx-auto items-center flex-shrink-0 space-x-4">
+            <button class="bg-gray-100 inline-flex py-3 px-5 rounded-lg items-center hover:bg-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z" />
+                    <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z" />
+                </svg>
+              <span class="ml-4 flex items-start flex-col leading-none">
+                <span class="text-xs text-gray-600 mb-1">CHECK OUT OUR</span>
+                <span class="title-font font-medium">FAQ</span>
+              </span>
+            </button>
+          </div>
+        </div>
+    </div>
+
+      <!-- Client Testmonials -->
+
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto">
+          <h1 class="text-5xl font-medium title-font text-gray-900 mb-12 text-center">Testimonials</h1>
+          <div class="flex flex-wrap -m-4">
+            
+            <div class="flex items-center justify-center px-5 py-5">
+                <div class="w-full mx-auto max-w-xl rounded-lg bg-white dark:bg-gray-800 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
+                    <div class="w-full pt-1 text-center pb-5 -mt-16 mx-auto">
+                        <a href="#" class="block relative">
+                            <img alt="profil" src="https://dummyimage.com/107x107" class="mx-auto object-cover rounded-full h-20 w-20 "/>
+                        </a>
+                    </div>
+                    <div class="w-full mb-10">
+                        <div class="text-3xl text-blue-500 text-left leading-tight h-3">
+                            “
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-100 text-center px-5">
+                            To get social media testimonials like these, keep your customers engaged with your social media accounts by posting regularly yourself
+                        </p>
+                        <div class="text-3xl text-blue-500 text-right leading-tight h-3 -mt-3">
+                            ”
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <p class="text-md text-blue-500 font-bold text-center">
+                            Tom Hardy
+                        </p>
+                        <p class="text-xs text-gray-500 dark:text-gray-300 text-center">
+                            @thom.hardy
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center px-5 py-5">
+                <div class="w-full mx-auto max-w-xl rounded-lg bg-white dark:bg-gray-800 shadow-lg px-5 pt-5 pb-10 text-gray-800 dark:text-gray-50">
+                    <div class="w-full pt-1 text-center pb-5 -mt-16 mx-auto">
+                        <a href="#" class="block relative">
+                            <img alt="profil" src="https://dummyimage.com/107x107" class="mx-auto object-cover rounded-full h-20 w-20 "/>
+                        </a>
+                    </div>
+                    <div class="w-full mb-10">
+                        <div class="text-3xl text-blue-500 text-left leading-tight h-3">
+                            “
+                        </div>
+                        <p class="text-sm text-gray-600 dark:text-gray-100 text-center px-5">
+                            To get social media testimonials like these, keep your customers engaged with your social media accounts by posting regularly yourself
+                        </p>
+                        <div class="text-3xl text-blue-500 text-right leading-tight h-3 -mt-3">
+                            ”
+                        </div>
+                    </div>
+                    <div class="w-full">
+                        <p class="text-md text-blue-500 font-bold text-center">
+                            Tom Hardy
+                        </p>
+                        <p class="text-xs text-gray-500 dark:text-gray-300 text-center">
+                            @thom.hardy
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
 
       <!-- Footer -->
       
@@ -760,3 +901,51 @@
                 </div>
             </div>
         </div> -->
+
+
+        <!-- <header class="bg-white dark:bg-gray-800">
+            <nav class="bg-gradient-to-t from-gray-800 to-gray-700 sticky">
+                <div class="container px-6 py-3 mx-auto lg:flex lg:justify-between lg:items-center">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <a class="text-2xl font-bold text-gray-800 dark:text-white lg:text-3xl hover:text-gray-700 dark:hover:text-gray-300" href="#">AS Airotech</a>
+                        </div>
+                        
+                        
+                        <div class="flex lg:hidden">
+                            <button type="button" class="text-gray-500 dark:text-gray-200 hover:text-gray-600 dark:hover:text-gray-400 focus:outline-none focus:text-gray-600 dark:focus:text-gray-400" aria-label="toggle menu">
+                                <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                                    <path fill-rule="evenodd" d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hidden items-center lg:flex">
+                        <div class="flex flex-col lg:flex-row lg:mx-6">
+                            <a href="index.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">HOME</a>
+                            <a href="about.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">ABOUT</a>
+                            <a href="products.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">PRODUCTS</a>
+                            <a href="services.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">SERVICES</a>
+                            <a href="contact.html" class="my-1 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-blue-500 dark:hover:text-blue-400 lg:mx-4 lg:my-0">CONTACT</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+    
+            <div class="container px-6 py-16 mx-auto">
+                <div class="items-center lg:flex">
+                    <div class="w-full lg:w-1/2">
+                        <div class="lg:max-w-lg space-y-14">
+                            <h1 class="text-5xl font-semibold text-gray-800 uppercase dark:text-white lg:text-6xl">Best Place To Choose Your Clothes</h1>
+                            <p class="mt-2 text-gray-600 dark:text-gray-400">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro beatae error laborum ab amet sunt recusandae? Reiciendis natus perspiciatis optio.</p>
+                            <button class="w-full px-3 py-2 mt-6 text-xs font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">Shop Now</button>
+                        </div>
+                    </div>
+            
+                    <div class="flex items-center justify-center w-full mt-6 lg:mt-0 lg:w-1/2">
+                        <img class="w-full h-full" src="/images/Catalogue-pana.svg" alt="Catalogue-pana.svg">
+                    </div>
+                </div>
+            </div>
+        </header> -->
